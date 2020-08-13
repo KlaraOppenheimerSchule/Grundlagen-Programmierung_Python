@@ -6,3 +6,5 @@ ersterNutzer = Nutzer(vorname, nachname)
 
 print(ersterNutzer.getVorname())
 print(ersterNutzer.getNachname())
+# print(ersterNutzer.__vorname)
+
