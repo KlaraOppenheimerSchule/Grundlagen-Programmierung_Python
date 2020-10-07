@@ -1,10 +1,10 @@
-infisrtname = input("Vorname")
+infirstname = input("Vorname")
 insecondname = input("Nachname")
 
 class user:
 
-    def __init__(self):
-        self.__firstname = infisrtname
+    def __init__(self, firstname, secondname):
+        self.__firstname = infirstname
         self.__secondname = insecondname
     def getFirstname(self):
         return self.__firstname
@@ -15,9 +15,6 @@ class user:
     def setSecondname(self, eing):
         self.__secondname = eing
 
-NewUser = user()
-
-NewUser.setFirstname(infisrtname)
-NewUser.setSecondname(insecondname)
+NewUser = user(infirstname, insecondname)
 
 print(NewUser.getFirstname(), NewUser.getSecondname())
