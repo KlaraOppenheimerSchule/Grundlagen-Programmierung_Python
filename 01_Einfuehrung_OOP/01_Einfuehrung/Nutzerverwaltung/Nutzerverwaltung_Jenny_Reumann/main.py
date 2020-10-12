@@ -1,4 +1,4 @@
-from Nutzer import *
+from .Nutzer import *
 
 # version 1
 # print("Bitte tragen sie die Daten des zu erzeugenden Mitarbeiter ein.\n")
