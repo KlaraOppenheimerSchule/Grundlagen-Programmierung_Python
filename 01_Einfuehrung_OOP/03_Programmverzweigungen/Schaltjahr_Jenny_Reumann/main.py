@@ -1,4 +1,4 @@
-from .Year import *
+from Year import *
 
 def main():
 
