@@ -52,7 +52,7 @@ def morsen(string):
     code = morseTabelle()
     translation = ""
 
-    for i, s in enumerate(string):
+    for s in string:
         flag = False
         for c in code:
             if c[0] == s.upper():
