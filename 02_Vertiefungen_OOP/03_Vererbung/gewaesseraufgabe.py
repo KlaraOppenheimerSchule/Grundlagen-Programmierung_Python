@@ -69,11 +69,35 @@ class Fluss(Gewässer):
         return self.meineLaenge
 
 
+#Erweiterung: Liste der Flüsse wird in einer weiteren Klassen geahlten
+class GewaesserVerwaltung:
+
+    def __init__(self):
+        self.gewaesserListe = []
+
+    def ergaenzeGewaesser(self, gewaesser):
+        self.gewaesserListe.append(gewaesser)
+
+    def zeigeGewaesserAn(self):
+        for i in range(0, len(self.gewaesserListe)):
+            print("item at index", i, ":", self.gewaesserListe[i].getVerlauf())
+        
+verwaltung = GewaesserVerwaltung()
+
 nordsee = Meer("Nordsee", True, 800, 842000)
 elbe = Fluss("Elbe", True, 1094, 500, nordsee)
 moldau = Fluss("Moldau", True, 430, 700, elbe)
 havel = Fluss("Havel", True, 334, 870, elbe)
 berounka = Fluss("Berounka", False, 138, 450, moldau)
 
+verwaltung.ergaenzeGewaesser(nordsee);
+verwaltung.ergaenzeGewaesser(elbe);
+verwaltung.ergaenzeGewaesser(moldau);
+verwaltung.ergaenzeGewaesser(havel);
+verwaltung.ergaenzeGewaesser(berounka);
+
 print(berounka.getVerlauf())
 print(nordsee.getVerlauf())
+
+verwaltung.zeigeGewaesserAn()
+
