@@ -1,20 +1,22 @@
 from typing import Type
 
 class Animal:
-    def __init__(self, *, name: str):
-        self.__name = name
+    def __init__(self, name: str):
+        self._name = name
     
     def getName(self) -> str:
-        return self.__name
+        return self._name
 
 
 class Cat(Animal):
-    ...
+     def __init__(self, name: str):
+        super().__init__(name)
 
 
 class Dog(Animal):
-    ...
-
+     def __init__(self, name: str):
+        super().__init__(name)
+    
 
 class Blume:
     def __init__(self, *, name: str):
@@ -28,16 +30,17 @@ class PetOwner:
     def getPetName(self)-> str:
         return self.__myAnimal.getName()
 
-def make_animal(animal_class: Type[Animal], name: str) -> Animal:
-       return animal_class(name=name)
+#def make_animal(animal_class: Type[Animal], name: str) -> Animal:
+    #   return animal_class(name=name)
 
 
-wuffi=make_animal(Dog, "Paulchen")
-kaetzchen=make_animal(Cat,"Maunzi")
+#wuffi=make_animal(Dog, "Paulchen")
+wuffi2=Dog("Hundi")
+#kaetzchen=make_animal(Cat,"Maunzi")
 
 #Soll Fehler bei mypy-Prüfung erzeugen
-narzisse=make_animal(Blume, "Narzischen")
+#narzisse=make_animal(Blume, "Narzischen")
 
-christoph=PetOwner(wuffi)
+christoph=PetOwner(wuffi2)
 
-print(wuffi.getName())
+print(wuffi2.getName())

@@ -19,10 +19,8 @@ class Meer(Gewaesser):
         return 0
 
 class Fluss(Gewaesser):
-    def __init__(self, name, schiffbarkeit, schadstoff, laenge, muendung):
-        super().__init__(name, schiffbarkeit, schadstoff)
-        self.__laenge = laenge
-        self.__muendung = muendung
+    def __init__(self):
+        pass
 
     def get_verlauf(self):
         self.__gesamtlaenge = self.__laenge
@@ -31,9 +29,9 @@ class Fluss(Gewaesser):
         return self.__gesamtlaenge
 
 nordsee = Meer("Nordsee", True, 800, 842000)
-elbe = Fluss("Elbe", True, 1094, 500, nordsee)
-moldau = Fluss("Moldau", True, 430, 700, elbe)
-havel = Fluss("Havel", True, 334, 870, elbe)
+#elbe = Fluss("Elbe", True, 1094, 500, nordsee)
+#moldau = Fluss("Moldau", True, 430, 700, elbe)
+havel = Fluss
 berounka = Fluss("Berounka", False, 138, 450, moldau)
 
 print(berounka.get_verlauf())

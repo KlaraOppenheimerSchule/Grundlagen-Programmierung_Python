@@ -51,8 +51,6 @@ class DVD (Medium):
         if (size > 0 and size < 1000):
             self.size = size
 
-            Python - Programm
-
 
 medium1 = Medium(123345678, "Mäuschen", "Klaus", 20.4)
 print(medium1.getIsbn())

@@ -13,7 +13,6 @@ class Dog(Animal):
     ...
 
 
-
 def make_animal(animal_class: Type[Animal], name: str) -> Animal:
     return animal_class(name=name)
 
